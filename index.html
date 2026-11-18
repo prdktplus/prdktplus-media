@@ -254,21 +254,32 @@ a:hover{color:var(--prdkt-twilight)}
     .cv-stats{margin:48px 0 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.18);display:flex;gap:40px;flex-wrap:wrap}
     .cv-stats dt{font-size:36px;font-weight:700;line-height:1;color:#2ff99e}
     .cv-stats dd{margin:8px 0 0;font-size:13px;color:rgba(255,255,255,.7)}
-    .mg-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);aspect-ratio:1;width:100%;max-width:520px;justify-self:end}
-    .mg-cell{position:relative;display:flex;opacity:0;animation:mgIn .6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--d) * 45ms)}
-    .mg-big{grid-column:span 2;grid-row:span 2}
-    .mg{display:block;width:100%;height:100%;transition:transform .5s cubic-bezier(.3,1.4,.5,1)}
-    .mg-cell:hover .mg{transform:rotate(90deg)}
-    .mg.c{border-radius:50%}
-    .mg.q-br{border-radius:0 0 0 100%}.mg.q-bl{border-radius:0 100% 0 0}.mg.q-tl{border-radius:100% 0 0 0}.mg.q-tr{border-radius:0 0 100% 0}
-    .mg.leaf{border-radius:0 100% 0 100%}.mg.leaf2{border-radius:100% 0 100% 0}
-    .mg.h-l{border-radius:100% 0 0 100% / 50% 0 0 50%;width:50%;margin-left:auto}
-    .mg.h-r{border-radius:0 100% 100% 0 / 0 50% 50% 0;width:50%}
-    .mg.h-t{border-radius:50% 50% 0 0 / 100% 100% 0 0;height:50%;margin-top:auto}
-    .mg.ring{border-radius:50%;background:transparent!important;box-shadow:inset 0 0 0 14px var(--c)}
-    .mg.ring2{border-radius:50%;background:transparent!important;box-shadow:inset 0 0 0 22px var(--c)}
-    .mg-dot{position:absolute;left:0;bottom:0;width:38%;height:38%;border-radius:0 100% 0 0;background:#001789}
-    @keyframes mgIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+    .tl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:12px;aspect-ratio:1;width:100%;max-width:560px;justify-self:end}
+    .tl{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:22px;text-decoration:none;color:#001789;overflow:hidden;opacity:0;animation:tlIn .6s cubic-bezier(.2,.8,.2,1) forwards;transition:border-radius .5s cubic-bezier(.3,1.2,.5,1),transform .3s}
+    .tl:hover{transform:translateY(-4px);color:#001789}
+    .tl-lab{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+    .tl-logos{grid-column:1 / span 2;background:#fff;border-radius:20px 20px 20px 160px;animation-delay:.05s}
+    .tl-logos:hover{border-radius:160px 20px 20px 20px}
+    .tl-mark{width:74%;align-self:flex-end;margin:0 4% 10% 0}
+    .tl-colour{background:#2ff99e;border-radius:20px 50% 20px 20px / 20px 50% 20px 20px;animation-delay:.12s}
+    .tl-colour:hover{border-radius:50% 20px 20px 20px / 50% 20px 20px 20px}
+    .tl-sw{display:flex;gap:6px}.tl-sw i{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1.5px rgba(0,23,137,.25)}
+    .tl-type{background:#ffd700;border-radius:50% 20px 20px 20px;animation-delay:.19s;align-items:flex-start}
+    .tl-type .tl-lab{align-self:flex-end}
+    .tl-type:hover{border-radius:20px 20px 50% 20px}
+    .tl-aa{font-size:clamp(34px,4.6vw,64px);font-weight:700;line-height:1}
+    .tl-grounds{border-radius:50%;box-shadow:inset 0 0 0 2px #2ff99e;color:#2ff99e;align-items:center;justify-content:center;gap:14px;text-align:center;animation-delay:.26s}
+    .tl-grounds:hover{color:#2ff99e;box-shadow:inset 0 0 0 2px #2ff99e,0 0 0 6px rgba(47,249,158,.18)}
+    .tl-about{background:#19b2fa;border-radius:20px 50% 20px 50%;animation-delay:.33s;align-items:flex-end}
+    .tl-about .tl-lab{align-self:flex-start}
+    .tl-about:hover{border-radius:50% 20px 50% 20px}
+    .tl-ar{font-family:'IBM Plex Sans Arabic',sans-serif;font-size:clamp(20px,2.6vw,32px);font-weight:700}
+    .tl-co{grid-column:1 / span 3;background:#000e57;border-radius:999px;flex-direction:row;align-items:center;padding:22px 40px;color:#2ff99e;animation-delay:.4s}
+    .tl-co:hover{color:#2ff99e}
+    .tl-corow{display:flex;align-items:center;gap:16px;color:#fff}
+    .tl-your{padding:10px 16px;border:1.5px dashed rgba(255,255,255,.5);border-radius:999px;font-size:13px}
+    .tl-rule{width:1.5px;height:36px;background:rgba(255,255,255,.4)}
+    @keyframes tlIn{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
     .sb{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid #e4e7f1}
     .sb-in{max-width:1240px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;gap:28px}
     .sb-logo img{height:22px;display:block}
@@ -279,9 +290,9 @@ a:hover{color:var(--prdkt-twilight)}
     .sec-n{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#e9fff4;color:#001789!important;font-size:12px!important;letter-spacing:.1em!important}
     .sec-n::before{content:"";width:8px;height:8px;border-radius:0 100% 0 0;background:#2ff99e}
     main h2{letter-spacing:-.02em}
-    @media (max-width:900px){.cv-grid{grid-template-columns:1fr;gap:56px;margin-top:48px}.mg-grid{justify-self:center;max-width:440px}}
-    @media (max-width:560px){.cv-in{padding:28px 16px 64px}.sb-in{padding:0 16px;gap:16px}.sb-logo{display:none}.cv-stats{gap:28px}.cv-btn{flex:1 1 100%;justify-content:center}}
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mg-cell{animation:none;opacity:1}.mg{transition:none}}
+    @media (max-width:900px){.cv-grid{grid-template-columns:1fr;gap:56px;margin-top:48px}.tl-grid{justify-self:center}}
+    @media (max-width:560px){.cv-in{padding:28px 16px 64px}.sb-in{padding:0 16px;gap:16px}.sb-logo{display:none}.cv-stats{gap:28px}.cv-btn{flex:1 1 100%;justify-content:center}.tl{padding:14px}.tl-lab{font-size:9px}.tl-co{padding:14px 22px}.tl-your{display:none}.tl-sw i{width:12px;height:12px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tl{animation:none;opacity:1;transition:none}}
   </style>
 </helmet>
 
@@ -306,7 +317,14 @@ a:hover{color:var(--prdkt-twilight)}
             <div><dt>2</dt><dd>Typefaces · EN + عربي</dd></div>
           </dl>
         </div>
-        <div class="mg-grid" aria-hidden="true"><div class="mg-cell" style="--d:0"><i class="mg q-br" style="--c:#2ff99e;background:#2ff99e"></i></div><div class="mg-cell" style="--d:1"><i class="mg c" style="--c:#ffd700;background:#ffd700"></i></div><div class="mg-cell" style="--d:2"><i class="mg leaf" style="--c:#19b2fa;background:#19b2fa"></i></div><div class="mg-cell" style="--d:3"><i class="mg ring" style="--c:#fff;background:#fff"></i></div><div class="mg-cell" style="--d:4"><i class="mg leaf2" style="--c:#fff;background:#fff"></i></div><div class="mg-cell mg-big" style="--d:5"><i class="mg q-bl" style="background:#2ff99e"></i><i class="mg-dot"></i></div><div class="mg-cell" style="--d:7"><i class="mg h-l" style="--c:#ffd700;background:#ffd700"></i></div><div class="mg-cell" style="--d:8"><i class="mg h-r" style="--c:#19b2fa;background:#19b2fa"></i></div><div class="mg-cell" style="--d:11"><i class="mg q-tl" style="--c:#fff;background:#fff"></i></div><div class="mg-cell" style="--d:12"><i class="mg h-t" style="--c:#ffd700;background:#ffd700"></i></div><div class="mg-cell" style="--d:13"><i class="mg ring2" style="--c:#2ff99e;background:#2ff99e"></i></div><div class="mg-cell" style="--d:14"><i class="mg q-tr" style="--c:#19b2fa;background:#19b2fa"></i></div><div class="mg-cell" style="--d:15"><i class="mg c" style="--c:#fff;background:#fff"></i></div></div>
+        <div class="tl-grid">
+          <a href="#logos" class="tl tl-logos"><span class="tl-lab">02 Logos</span><img src="assets/logo/prdkt-logo.svg" alt="" class="tl-mark"></a>
+          <a href="#colour" class="tl tl-colour"><span class="tl-lab">07 Colour</span><span class="tl-sw"><i style="background:#001789"></i><i style="background:#ffd700"></i><i style="background:#19b2fa"></i><i style="background:#fff"></i></span></a>
+          <a href="#type" class="tl tl-type"><span class="tl-lab">08 Type</span><span class="tl-aa">Aa</span></a>
+          <a href="#backgrounds" class="tl tl-grounds"><span class="tl-lab">03 Grounds</span><img src="assets/logo/prdkt-logo-reverse.svg" alt="" style="width:72%"></a>
+          <a href="#about" class="tl tl-about"><span class="tl-lab">01 About</span><span dir="rtl" class="tl-ar">برودكت+</span></a>
+          <a href="#cobrand" class="tl tl-co"><span class="tl-lab">06 Co-branding</span><span class="tl-corow"><span class="tl-your">Your logo</span><span class="tl-rule"></span><img src="assets/logo/prdkt-logo-reverse.svg" alt="" style="height:30px"></span></a>
+        </div>
       </div>
     </div>
   </header>
